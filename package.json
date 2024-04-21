@@ -12,7 +12,9 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
-    "blacktea024": "^0.1.5"
+    "blacktea024": "^0.1.5",
+    "node": "^20.6.1",
+    "html-loader": "^5.0.0"
   },
   "author": "flecehemano1037",
   "license": "ISC",
