@@ -1,3 +1,4 @@
+[![Jekyll site CI](https://github.com/flecehemano1037/yeniproje/actions/workflows/jekyll-docker.yml/badge.svg)](https://github.com/flecehemano1037/yeniproje/actions/workflows/jekyll-docker.yml) [![NodeJS with Gulp](https://github.com/flecehemano1037/yeniproje/actions/workflows/npm-gulp.yml/badge.svg)](https://github.com/flecehemano1037/yeniproje/actions/workflows/npm-gulp.yml) [![.github/workflows/azure-webapps-node.yml](https://github.com/flecehemano1037/yeniproje/actions/workflows/azure-webapps-node.yml/badge.svg)](https://github.com/flecehemano1037/yeniproje/actions/workflows/azure-webapps-node.yml)
 # YeniProje
 
 Welcome to YeniProje, a decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens.
