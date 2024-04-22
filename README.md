@@ -34,8 +34,9 @@ To get started with YeniProje, follow these steps:
 
 2. **Install dependencies:** Navigate to the project directory and install dependencies using npm.
 
-   ```bash
+   ```
    cd yeniproje
+   
    npm install -y
    ```
 
