@@ -28,11 +28,12 @@ To get started with YeniProje, follow these steps:
 
 1. **Clone the repository:** Clone the YeniProje repository to your local machine using Git.
    
-   ```bash
+   ```console
+   
    git clone https://github.com/flecehemano1037/yeniproje.git
    ```
 
-2. **Install dependencies:** Navigate to the project directory and install dependencies using npm.
+3. **Install dependencies:** Navigate to the project directory and install dependencies using npm.
 
 ```console
    cd yeniproje
@@ -43,7 +44,7 @@ To get started with YeniProje, follow these steps:
 
 3. **Start the server:** Start the backend server to run the application locally.
 
-   ```bash
+   ```console
    npm start
    ```
 
