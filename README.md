@@ -36,7 +36,7 @@ To get started with YeniProje, follow these steps:
 
    ```bash
    cd yeniproje
-   npm install
+   npm install -y
    ```
 
 3. **Start the server:** Start the backend server to run the application locally.
