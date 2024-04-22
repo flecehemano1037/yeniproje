@@ -1,68 +1,55 @@
-# This workflow will build and push a node.js application when a commit is pushed to your default branch.
-#
-# To configure this workflow:
-#
-# 1. Set up your Glitch project.
-#
-# 2. Obtain your Glitch project's git URL.
-#
-# 3. Create a secret in your GitHub repository named GLITCH_GIT_URL and paste the project's git URL as the value.
-#
-# For more information on GitHub Actions: https://docs.github.com/actions
-
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 env:
-  PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x'   # set this to the node version to use
+  PACKAGE_PATH: '.'       # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '20.x'    # set this to the node version to use
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
 
-    - name: npm install and build
-      run: |
-        npm install
-        npm run build --if-present
+    - name: npm install and build
+      run: |
+        npm install
+        npm run build --if-present
 
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v2
-      with:
-        name: node-app
-        path: ${{ env.PACKAGE_PATH }}
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: node-app
+        path: ${{ env.PACKAGE_PATH }}
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v2
-      with:
-        name: node-app
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: node-app
 
-    - name: Clone Glitch repository
-      run: git clone "${{ secrets.GLITCH_GIT_URL }}" .glitch
+    - name: Clone Glitch repository
+      run: git clone "${{ secrets.GLITCH_GIT_URL }}" .glitch
 
-    - name: Copy files to Glitch repository
-      run: cp -r node-app/* .glitch/
+    - name: Copy files to Glitch repository
+      run: cp -r node-app/* .glitch/
 
-    - name: Commit changes
-      run: |
-        cd .glitch/
-        git config user.email "github-actions@github.com"
-        git config user.name "GitHub Actions"
-        git add .
-        git commit -m "Deploy to Glitch"
-        git push origin master
-
+    - name: Commit changes
+      run: |
+        cd .glitch/
+        git config user.email "github-actions@github.com"
+        git config user.name "GitHub Actions"
+        git add .
+        git commit -m "Deploy to Glitch"
+        git push origin master
