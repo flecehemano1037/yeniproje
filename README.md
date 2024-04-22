@@ -27,23 +27,27 @@ YeniProje provides users with a decentralized platform for trading various Ether
 To get started with YeniProje, follow these steps:
 
 1. **Clone the repository:** Clone the YeniProje repository to your local machine using Git.
-   
-   ```bash
+
+```console
+   
    git clone https://github.com/flecehemano1037/yeniproje.git
-   ```
+```
 
-2. **Install dependencies:** Navigate to the project directory and install dependencies using npm.
+3. **Install dependencies:** Navigate to the project directory and install dependencies using npm.
 
-   ```bash
+```console
    cd yeniproje
-   npm install
-   ```
+   
+   npm install -y
+
+```
 
 3. **Start the server:** Start the backend server to run the application locally.
 
-   ```bash
+```console
+   
    npm start
-   ```
+```
 
 4. **Access the application:** Access the application by navigating to http://localhost:3000 in your web browser.
 
